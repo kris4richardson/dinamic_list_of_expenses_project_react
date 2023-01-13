@@ -29,6 +29,13 @@ function App() {
     console.log('In App.js');
     expenses = [...expenses, expense]
     console.log(expense);
+
+
+  }
+
+  const addFilteredYearHandler = (year) => {
+    console.log(year);
+    console.log('This is in app.js');
   }
   
 // return React.createElement(
@@ -38,7 +45,7 @@ function App() {
   return (
     <div>
       <NewExpense addNewExpense={addExpenseHandler}/>
-      <Expenses items={expenses}/>
+      <Expenses items={expenses} addSelectedYear={addFilteredYearHandler}/>
     </div>
   );
 }

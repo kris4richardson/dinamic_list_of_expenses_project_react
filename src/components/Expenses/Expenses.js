@@ -10,15 +10,14 @@ function Expenses(props) {
 
     props.addSelectedYear(selectedYear);
     console.log('Expenses.js');
-
-     console.log(selectedYear);
+    console.log(selectedYear);
   };
 
   return (
     <div>
       
     <Card className="expenses">
-    <ExpensesFilter onChangeFilter={filterDateHahdler}/>
+    <ExpensesFilter addFiltedYear={filterDateHahdler}/>
       <ExpenseItem
         title={props.items[0].title}
         amount={props.items[0].amount}
