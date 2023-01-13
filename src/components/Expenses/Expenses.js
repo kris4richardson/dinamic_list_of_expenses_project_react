@@ -8,7 +8,7 @@ import ExpensesFilter from "./ExpensesFilter";
 function Expenses(props) {
   const filterDateHahdler = selectedYear => { 
 
-    // props.addSelectedYear(selectedYear);
+    props.addSelectedYear(selectedYear);
     console.log('Expenses.js');
 
      console.log(selectedYear);
