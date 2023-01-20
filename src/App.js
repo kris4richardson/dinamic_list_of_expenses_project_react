@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
 
@@ -25,31 +25,22 @@ let DYMMY_EXPENSES = [
 ];
 
 function App() {
- const [expenses, setExpenses] = useState(DYMMY_EXPENSES);
+  const [expenses, setExpenses] = useState(DYMMY_EXPENSES);
 
-  const addExpenseHandler = expense => {
-   
-    setExpenses(prevExpenses => 
-      {
-        return [expense, ...prevExpenses];
-      });
+  const addExpenseHandler = (expense) => {
+    setExpenses((prevExpenses) => {
+      return [expense, ...prevExpenses];
+    });
+  };
 
-
-  }
-
-  const addFilteredYearHandler = (year) => {
-    console.log(year);
-    console.log('This is in app.js');
-  }
-  
-// return React.createElement(
-//   'div',{},React.createElement('h2', {}, "Let's get started!"), React.createElement(Expenses,  {items: expenses})
-// );
+  // return React.createElement(
+  //   'div',{},React.createElement('h2', {}, "Let's get started!"), React.createElement(Expenses,  {items: expenses})
+  // );
 
   return (
     <div>
-      <NewExpense addNewExpense={addExpenseHandler}/>
-      <Expenses items={expenses} addSelectedYear={addFilteredYearHandler}/>
+      <NewExpense addNewExpense={addExpenseHandler} />
+      <Expenses items={expenses} />
     </div>
   );
 }
